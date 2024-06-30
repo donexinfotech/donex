@@ -1,16 +1,12 @@
 {
     "builds": [
-      {
-        "src": "donex/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-      }
+      { "src": "Website/build", "use": "@vercel/static-build" },
+      { "src": "donex/wsgi.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" } }
     ],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "donex/wsgi.py"
-      }
+      { "src": "/api/(.*)", "dest": "donex/wsgi.py" },
+      { "src": "/(.*)", "dest": "Website/build/index.html" }
     ],
-    "buildCommand": "sh build.sh"
+    "cleanUrls": true
   }
+  
