@@ -1,0 +1,96 @@
+:root {
+    --overlay: rgba(0, 0, 0, 0.5); /* Define your overlay color here */
+  }
+  
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  
+  .hero {
+    background-color: var(--overlay);
+    color: #fff;
+    width: 100%;
+    height: 100vh; /* Ensure hero section takes up the full viewport height */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    margin-top: 5rem; /* Adjust based on the mt-5 class equivalent */
+  }
+  
+  .hero:before {
+    content: '';
+    background: url('./images/Hero-1-1.jpg') no-repeat center center;
+    background-size: cover; /* Ensure the background image covers the entire hero section */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .hero .content {
+    height: 100%;
+    /* margin-right: 864px; */
+    /* margin-bottom: 43px; */
+    color: #ff6347;
+    font-size: 33px;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center the content horizontally */
+    max-width: 1100px;
+    padding: 1rem;
+    z-index: 1; /* Ensure content is above the background image */
+    box-sizing: border-box;
+    margin-top: 5rem; /* Adjust based on the mt-5 class equivalent */
+  }
+  
+  .hero .content p {
+    margin: 0; /* Reset margin to avoid unexpected spacing */
+    font-size: 1.9rem; /* Base font size */
+    text-align: center; /* Center-align text */
+    color: #ff6347;
+  }
+  
+  /* Media Query for Medium Screens (Tablets) */
+  @media (max-width: 768px) {
+    .hero .content {
+      padding: 1rem;
+    }
+  
+    .hero .content p {
+      font-size: 1.6rem;
+    }
+  }
+  
+  /* Media Query for Small Screens (Mobile Phones) */
+  @media (max-width: 576px) {
+
+    .hero{
+        height: 300px;
+    }
+  
+    .hero:before {
+      background: url('./images/Hero-1-1.jpg') no-repeat center center;
+      background-size: cover; /* Ensure the background image covers the entire hero section */
+    }
+  
+    .hero .content {
+      padding: 0.5rem;
+      text-align: center; /* Center-align content for smaller screens */
+      display: flex;
+      justify-content: center;
+    }
+  
+    .hero .content p {
+      font-size: 1.4rem;
+    }
+  }
+  
