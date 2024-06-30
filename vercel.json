@@ -1,13 +1,6 @@
 {
     "builds": [
     {
-      "src": "Website",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "Website/build"
-      }
-    },
-    {
       "src": "donex/wsgi.py",
       "use": "@vercel/python",
       "config": {
@@ -21,6 +14,5 @@
         "src": "/(.*)",
         "dest": "donex/wsgi.py"
       }
-    ],
-    "buildCommand": "sh build.sh"
+    ]
   }
