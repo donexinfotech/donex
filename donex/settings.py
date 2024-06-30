@@ -56,6 +56,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
+    ".vercel.app"
 ]
 
 ROOT_URLCONF = 'donex.urls'
