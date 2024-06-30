@@ -1,6 +1,10 @@
-echo "Installing Python dependencies..."
+set -e
+
+cd Website
+npm install
+npm run build
+cd ..
+
 pip install -r requirements.txt
-echo "Running database migrations..."
 python manage.py migrate
-echo "Collecting static files..."
-python manage.py collectstatic
+python manage.py collectstatic --noinput
