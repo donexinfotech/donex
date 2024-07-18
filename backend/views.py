@@ -28,7 +28,7 @@ class DetailsView(APIView):
         if serializer.is_valid():
             serializer.save()
             subject = 'welcome to DoneX info tech services'
-            message = f'Hi {serializer.data['first_name']}, thank you for contacting DoneXit Services we will reach out to you soon.'
+            message = f'Hi {serializer.data["first_name"]}, thank you for contacting DoneXit Services we will reach out to you soon.'
             email_from = settings.EMAIL_HOST_USER
             recipient_list = [serializer.data['email']]
             send_mail( subject, message, email_from, recipient_list )
