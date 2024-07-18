@@ -58,6 +58,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
     "http://localhost:3000",
     "https://donex-x2ed.vercel.app",
+    "https://8a32c297-4e1e-4f49-b9bf-7c0c8226faff-dev.e1-us-east-azure.choreoapis.dev/donex/donex-backend/v1",
+    "/choreo-apis/donex/donex-backend/v1"
 ]
 
 ROOT_URLCONF = 'donex.urls'
