@@ -43,7 +43,6 @@ class Contact extends React.Component {
 
     submitHandler(event) {
         const csrftoken = this.getCookie('csrftoken');
-
         fetch('http://127.0.0.1:8000/api/contact-us/', {
             method: 'POST',
             headers: {
