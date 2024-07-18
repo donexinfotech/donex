@@ -28,7 +28,7 @@ class Contact extends React.Component {
                     cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
                     break;
                 }
-            }
+            } 
         }
         return cookieValue;
     }

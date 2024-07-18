@@ -6,6 +6,7 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 from django.core.mail import send_mail
+import os
 
 # Create your views here.
 
@@ -23,11 +24,11 @@ class DetailsView(APIView):
             })
         
     def post(self, request):
-        data = request.data
+        data = request.data 
         serializer = DetailsSerializer(data = data)
         if serializer.is_valid():
             serializer.save()
-            subject = 'welcome to DoneX info tech services'
+            subject = 'welcome to DoneX info tech services '
             message = f'Hi {serializer.data["first_name"]}, thank you for contacting DoneXit Services we will reach out to you soon.'
             email_from = settings.EMAIL_HOST_USER
             recipient_list = [serializer.data['email']]
